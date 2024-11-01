@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CountryCard from "./components/CountryCard/CountryCard"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+	const countryData = {
+		code: "US",
+		name: "Uzbekistan",
+		continent: "Asia",
+		phone: "998",
+		languages: ["Uzbek", "Russian"],
+		currency: "UZS",
+		capital: "Tashkent",
+	}
+	return (
+		<>
+			<CountryCard country={countryData} />
+			<CountryCard country={countryData} />
+			<CountryCard country={countryData} />
+			<CountryCard country={countryData} />
+		</>
+	)
 }
-
-export default App;
