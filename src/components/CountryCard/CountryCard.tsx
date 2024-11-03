@@ -18,7 +18,6 @@ interface Language {
 interface CountryProps {
   code: string;
   name: string;
-  continent: string;
   phone: string;
   languages: Language[];
   currency: string;
@@ -26,42 +25,42 @@ interface CountryProps {
 }
 
 const CountryCard = ({ country }: { country: CountryProps }) => {
-  const displayedLanguages = country.languages.slice(0, 3);
+  const { code, name, phone, languages, currency, capital } = country;
+
+  const languageDisplay =
+    languages.length > 3
+      ? `${languages
+          .slice(0, 3)
+          .map((lang) => lang.name)
+          .join(", ")} ...`
+      : languages.map((lang) => lang.name).join(", ");
 
   return (
     <Card className={styles.countryCard}>
       <CardMedia
         component="img"
-        image={`https://flagcdn.com/w320/${country.code.toLowerCase()}.png`}
-        title={country.name}
+        image={`https://flagcdn.com/w320/${code.toLowerCase()}.png`}
+        title={name}
         className={styles.countryFlag}
       />
       <CardContent className={styles.cardContent}>
         <Typography gutterBottom variant="h6" component="h2" noWrap>
-          {country.name}
+          {name}
         </Typography>
-        {country.capital && (
+        {capital && (
           <Typography variant="subtitle1" className={styles.countryInfo}>
             <FlagIcon sx={{ fontSize: 16 }} />
-            {country.capital}
+            {capital}
           </Typography>
         )}
         <Box className={styles.countryDetails}>
           <Typography variant="subtitle1" className={styles.countryInfo}>
-            {country.continent}
-          </Typography>
-          <Typography variant="subtitle1" className={styles.countryInfo}>
-            <Chip label={country.currency} variant="outlined" size="small" />
-            <PhoneIcon sx={{ fontSize: 16 }} />+{country.phone}
+            <Chip label={currency} variant="outlined" size="small" />
+            <PhoneIcon sx={{ fontSize: 16 }} />+{phone}
           </Typography>
           <Typography variant="subtitle1" className={styles.countryInfo}>
             <LanguageIcon sx={{ fontSize: 16 }} />
-            {displayedLanguages.map((lang, index) => (
-              <span key={index}>
-                {lang.name}
-                {index < displayedLanguages.length - 1 && ", "}
-              </span>
-            ))}
+            {languageDisplay}
           </Typography>
         </Box>
       </CardContent>
