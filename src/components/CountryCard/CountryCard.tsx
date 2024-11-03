@@ -40,25 +40,31 @@ const CountryCard = ({ country }: { country: CountryProps }) => {
               {country.capital}
             </Typography>
           )}
+          <span className={styles.countryInfo}>
+            <FlagIcon sx={{ fontSize: 16 }} />
+            {country.continent}
+          </span>
         </Box>
-
-        <span className={styles.countryInfo}>
-          <FlagIcon sx={{ fontSize: 16 }} />
-          {country.continent}
-        </span>
       </Box>
       <CardContent className={styles.countryContent} sx={{ display: "flex" }}>
         <Typography variant="body2" color="text.secondary">
-          <Box sx={{ display: "flex", gap: "20px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              gap: "20px",
+              alignItems: "center",
+            }}
+          >
             <Typography variant="subtitle1" className={styles.countryInfo}>
               <PhoneIcon sx={{ fontSize: 16 }} />+{country.phone}
+            </Typography>
+
+            <Typography variant="subtitle1" className={styles.countryInfo}>
+              <Chip label={country.currency} variant="outlined" size="small" />
             </Typography>
             <Typography variant="subtitle1" className={styles.countryInfo}>
               <LanguageIcon sx={{ fontSize: 16 }} />
               {country.languages.join(", ")}
-            </Typography>
-            <Typography variant="subtitle1" className={styles.countryInfo}>
-              <Chip label={country.currency} variant="outlined" size="small" />
             </Typography>
           </Box>
         </Typography>

@@ -1,18 +1,19 @@
 .countryCard {
   width: 100%;
-  max-width: 350px;
-  margin: 10px auto;
-  border-radius: 8px;
+  max-width: 300px;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .countryFlag {
-  width: 100%;
   max-width: 140px;
   border-radius: 8px 0 0 8px;
 }
 
 .countryInfo {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .wrapper {
