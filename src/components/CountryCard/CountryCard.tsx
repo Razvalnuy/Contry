@@ -11,63 +11,59 @@ import {
 } from "@mui/material";
 import styles from "./CountryCard.module.css";
 
+interface Language {
+  name: string;
+}
+
 interface CountryProps {
   code: string;
   name: string;
   continent: string;
   phone: string;
-  languages: string[];
+  languages: Language[];
   currency: string;
   capital?: string;
 }
 
 const CountryCard = ({ country }: { country: CountryProps }) => {
+  const displayedLanguages = country.languages.slice(0, 3);
+
   return (
     <Card className={styles.countryCard}>
-      <Box sx={{ display: "flex" }}>
-        <CardMedia
-          component="img"
-          image={`https://flagcdn.com/w320/${country.code.toLowerCase()}.png`}
-          title={country.name}
-          className={styles.countryFlag}
-        />
-        <Box className={styles.wrapper}>
-          <Typography gutterBottom variant="h5" component="h2">
-            {country.name}
-          </Typography>
-          {country.capital && (
-            <Typography variant="subtitle1" className={styles.countryInfo}>
-              {country.capital}
-            </Typography>
-          )}
-          <span className={styles.countryInfo}>
-            <FlagIcon sx={{ fontSize: 16 }} />
-            {country.continent}
-          </span>
-        </Box>
-      </Box>
-      <CardContent className={styles.countryContent} sx={{ display: "flex" }}>
-        <Typography variant="body2" color="text.secondary">
-          <Box
-            sx={{
-              display: "flex",
-              gap: "20px",
-              alignItems: "center",
-            }}
-          >
-            <Typography variant="subtitle1" className={styles.countryInfo}>
-              <PhoneIcon sx={{ fontSize: 16 }} />+{country.phone}
-            </Typography>
-
-            <Typography variant="subtitle1" className={styles.countryInfo}>
-              <Chip label={country.currency} variant="outlined" size="small" />
-            </Typography>
-            <Typography variant="subtitle1" className={styles.countryInfo}>
-              <LanguageIcon sx={{ fontSize: 16 }} />
-              {country.languages.join(", ")}
-            </Typography>
-          </Box>
+      <CardMedia
+        component="img"
+        image={`https://flagcdn.com/w320/${country.code.toLowerCase()}.png`}
+        title={country.name}
+        className={styles.countryFlag}
+      />
+      <CardContent className={styles.cardContent}>
+        <Typography gutterBottom variant="h6" component="h2" noWrap>
+          {country.name}
         </Typography>
+        {country.capital && (
+          <Typography variant="subtitle1" className={styles.countryInfo}>
+            <FlagIcon sx={{ fontSize: 16 }} />
+            {country.capital}
+          </Typography>
+        )}
+        <Box className={styles.countryDetails}>
+          <Typography variant="subtitle1" className={styles.countryInfo}>
+            {country.continent}
+          </Typography>
+          <Typography variant="subtitle1" className={styles.countryInfo}>
+            <Chip label={country.currency} variant="outlined" size="small" />
+            <PhoneIcon sx={{ fontSize: 16 }} />+{country.phone}
+          </Typography>
+          <Typography variant="subtitle1" className={styles.countryInfo}>
+            <LanguageIcon sx={{ fontSize: 16 }} />
+            {displayedLanguages.map((lang, index) => (
+              <span key={index}>
+                {lang.name}
+                {index < displayedLanguages.length - 1 && ", "}
+              </span>
+            ))}
+          </Typography>
+        </Box>
       </CardContent>
     </Card>
   );

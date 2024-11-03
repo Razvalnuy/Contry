@@ -1,4 +1,9 @@
-.wrapper {
+.cardList {
   display: flex;
   flex-wrap: wrap;
+}
+
+.search {
+  position: sticky;
+  top: 0;
 }
