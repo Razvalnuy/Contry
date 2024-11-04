@@ -35,7 +35,7 @@ const CountryList: React.FC = () => {
 		}
 	}, [error, retryCount, refetch])
 
-	if (loading) return <h1 className={styles.loader}>Загрузка...</h1>
+	if (loading) return <h1 className={styles.loader}>Загрузка…</h1>
 
 	if (error) {
 		return <ErrorDisplay error={error} retryCount={retryCount} />
@@ -47,7 +47,7 @@ const CountryList: React.FC = () => {
 				<CountryCard country={country} key={country.name} />
 			))}
 			{filteredCountry?.length === 0 && (
-				<h1 className={styles.loader}>Ничего не нашлось...</h1>
+				<h1 className={styles.loader}>Ничего не нашлось…</h1>
 			)}
 		</>
 	)

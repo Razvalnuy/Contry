@@ -13,6 +13,21 @@
 	object-fit: cover;
 }
 
+.cardContent {
+	padding: 16px;
+}
+
+.title {
+	margin-bottom: 8px;
+}
+
 .countryInfo {
+	display: flex;
+	align-items: center;
+	gap: 8px;
 	margin-bottom: 4px;
+}
+
+.icon {
+	font-size: 16px;
 }
