@@ -1,18 +1,18 @@
 .countryCard {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 15px;
-  margin: 0px auto;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+	width: 100%;
+	max-width: 300px;
+	border-radius: 15px;
+	margin: 10px auto;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
 
 .countryFlag {
-  height: 160px;
-  object-fit: cover;
+	height: 160px;
+	object-fit: cover;
 }
 
 .countryInfo {
-  margin-bottom: 4px;
+	margin-bottom: 4px;
 }

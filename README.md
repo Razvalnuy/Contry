@@ -1,46 +1,73 @@
-# Getting Started with Create React App
-https://docs.google.com/document/d/1pIT8TczaXeOZcMMUa-hAAvZdE8tVmOdcv6zumXZ8Eqk/edit?tab=t.0
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Приложение "Список стран"
 
-## Available Scripts
+Данное приложение отображает список стран в виде карточек с информацией о стране и возможностью поиска по коду страны (например, UZ, RU и т.д.).
 
-In the project directory, you can run: 
+## Задача
 
-### `npm start`
+Создать одностраничное приложение на **React** и **TypeScript** для отображения списка стран с возможностью поиска.
+Задача включает:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Запрос данных о странах из API [https://countries.trevorblades.com/graphql](https://countries.trevorblades.com/graphql) через **GraphQL Apollo Client**.
+2. Отображение информации о стране на карточках с использованием компонента **MUI Card**:
+   - Название страны
+   - Столица
+   - Языки
+   - Флаг
+   - Телефонный код
+   - Валюта
+3. Фильтрация списка стран по коду страны с помощью текстового поля ввода (Input).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Критерии оценивания
 
-### `npm test`
+1. **Работоспособность**: корректное выполнение функциональных требований.
+2. **UI/UX**: удобство использования интерфейса.
+3. **Качество кода**: структурированность, гибкость, возможность внесения изменений, переиспользуемость компонентов.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Структура проекта
 
-### `npm run build`
+Проект состоит из нескольких компонентов, разделённых для повышения гибкости и удобства модификации:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Основные
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **CountryList**: компонент для отображения списка стран и выполнения поиска.
+- **CountryCard**: компонент, отображающий карточку с информацией о стране.
+- **Search**: компонент для ввода и фильтрации по коду страны.
+- **Apollo Client Setup**: настройка Apollo Client для подключения к GraphQL API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Технологии и библиотеки
 
-### `npm run eject`
+- **React** + **TypeScript** — для создания пользовательского интерфейса.
+- **MUI (Material-UI)** — для стилизации и удобного использования карточек через `MUI Card`.
+- **GraphQL Apollo Client** — для выполнения запросов к API.
+- **React Redux** — для управления состоянием приложения, включая сохранение состояния поиска.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Примечания
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Код опубликован на GitHub с понятными коммитами, отображающими процесс выполнения задания.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Заключение
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Выполнено тестовое задание по разработке React-приложения с функциональностью отображения списка стран и возможностью поиска. Реализованы требования ТЗ, уделено внимание качеству кода и удобству интерфейса.
 
-## Learn More
+Марат, Гаджибутаев: https://github.com/razvalnuy
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Установка и запуск
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Клонируйте репозиторий:
+   ```bash
+   git clone <URL_репозитория>
+   ```
+
+## Перейдите в директорию проекта и установите зависимости:
+
+```bash
+cd <папка_проекта>
+npm install
+```
+
+## Запустите приложение:
+
+```bash
+Копировать код
+npm start
+```

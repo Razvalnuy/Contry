@@ -1,6 +1,8 @@
 .wrapper {
-  padding: 20px;
-  max-width: 500px;
-  margin: 0 auto;
-  margin-bottom: 15px;
+	padding: 20px;
+	max-width: 500px;
+	margin: 0 auto;
+	margin-bottom: 15px;
+	position: sticky;
+	top: 0;
 }

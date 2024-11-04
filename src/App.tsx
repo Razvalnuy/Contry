@@ -1,17 +1,20 @@
-import { Box, Card, Paper } from "@mui/material";
-import Search from "./components/Search/Search";
-import styles from "./App.module.css";
-import CountryList from "./components/CountryList/CountryList";
+import { Card, Container, Paper, Typography } from "@mui/material"
+import styles from "./App.module.css"
+import CountryList from "./components/CountryList/CountryList"
+import Search from "./components/Search/Search"
 
 export default function App() {
-  return (
-    <Paper>
-      <Box className={styles.search}>
-        <Search />
-      </Box>
-      <Card className={styles.cardList}>
-        <CountryList />
-      </Card>
-    </Paper>
-  );
+	return (
+		<Paper>
+			<Container>
+				<Typography variant="h4" className={styles.title}>
+					Countries
+				</Typography>
+				<Search />
+				<Card className={styles.cardList}>
+					<CountryList />
+				</Card>
+			</Container>
+		</Paper>
+	)
 }
